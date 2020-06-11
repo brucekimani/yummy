@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- styles block -->
+{% block styles %} {{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'styles.css') }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+<link href="https://fonts.google.com/specimen/Kenia/" rel="stylesheet">
+
+{% endblock %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pizza-inn</title>
+
+</head>
+
+<body class="container">
+    <div class="overlay">
+        <div class="deliver">
+            <nav class="greatnav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li> <a href="menu.html"> Our Menu</a></li>
+
+                    <li> <a href="contact.html">Contact Us</a></li>
+
+                </ul>
+            </nav>
+            <div>
+                {{wtf.quick_form(order_form)}}
+            </div>
+            {{macro.displayOrder(order)}}
+            </div>
+            <div class="logo">
+                <img src="/app/static/Images/download (2).jpeg" alt="logo" width="120" height="140" id="log1">
+
+                <h1 class="welcome animated slideInLeft" style="animation-delay:0.0s">WELCOME TO PAPA JOHNS PIZZA INN</h1>
+                <p class="para animated slideInLeft" style="animation-delay:2s">"Offriamo la migloire pizza citta."</p>
+
+            </div>
+        </div>
+        <div class="contact">
+
+            <h2>Feedback</h2>
+            <p>We would like to hear from you concerning our services and also any issue you would like us to handle so as to make you comfortable.
+                Please be free to give us your feedback which will be greatly appreciated through our social media pages.</p>
+
+            <div class="pic">
+                <img src="/app/static/Images/yummy.jpeg" alt="" width="210" id="">
+            </div>
+
+            <form action="">
+                <div class="fill">
+                    <div class="form-group">
+                        <h3>Fill in the form</h3>
+                        <br><br>
+                        <input type="text" value="" id="name" placeholder="Name..">
+                        <br><br>
+                        <input type="email" value="" id="email" placeholder="email..">
+                        <br><br>
+                    </div>
+                    <textarea name="" id="text" cols="30" rows="10" placeholder="write your message.."></textarea>
+                    <br><br>
+                    <button type="submit" class="btn btn" onclick="validate()">Submit</button>
+                    <div class="output">
+                        <p id="message"></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p>For any issues or order,contact us through: call +254 738562058</p>
+            <p>Email us @:PAPAJOHNSPIZZAINN4@gmail.com</p>
+            <P>You can follow us on our social media pages below.</P>
+
+            <a href="https://www.facebook.com"><img src="/app/static/Images/facebook.png" alt="facebook" id="img8"></a>
+            <a href="https://twitter.com/home"><img src="/app/static/Images/twitter.jpeg" alt="twitter" id="img9"></a>
+            <a href="https://www.youtube.com/watch?v=f9Slq2ck7xQ"><img src="/app/static/Images/Youtube.png" alt="Youtube" id="img10"></a>
+            <p>BENVENUTO DI NUOVO.KARIBU TENA</p>
+
+            <p>Site created by YUMMY Investors Co.
+                Copyright(c)2020.All rights reserved.
+                P.O BOX :999666,Nairobi,Kenya.
+            </p>
+</footer>
+
+</div>
+{% endfor %}
+</div>
+{% endfor %}
+</div>
+
+<style>
+body {
+background-color: blue;
+padding-top: 100px;
+}
+
+h2 {
+color: black;
+font-size: 50px;
+font-family: 'Kenia','cursive';
+}
+
+.container {
+font-size: 20px;
+}
+
+.box {
+box-shadow: 0px 10px 10px #865C33;
+}
+</style>
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,140 @@
+{% extends 'base.html' %}{% import 'bootstrap/wtf.html' as wtf%}
+{% block content %}
+<!-- styles block -->
+{% block styles %} {{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'styles.css') }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+<link href="https://fonts.google.com/specimen/Kenia/" rel="stylesheet">
+
+{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PIZZA INN</title>
+    
+</head>
+<div class="container">
+    <div class="overlay">
+        <div class="intro">
+            <nav class="greatnav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li> <a href="menu.html"> Our Menu</a></li>
+
+                    <li> <a href="contact.html">Contact Us</a></li>
+
+                </ul>
+            </nav>
+            <div class="logo">
+                {wtf.quick_form(order_form)}}
+               </div>
+               {{macro.displayPizza(pizza)}} 
+             </div>
+                <img src="/app/static/Images/download (2).jpeg" alt="logo" width="210" height="210" id="log1">
+
+                <h1 class="welcome animated slideInLeft" style="animation-delay:0.0s">WELCOME TO PAPA JOHNS PIZZA INN</h1>
+                <p class="para animated slideInLeft" style="animation-delay:2s">"Offriamo la migloire pizza citta."</p>
+            </div>
+        </div>
+
+        <div class="histo">
+            <h2>Company's history</h2>
+            <p>PAPA JOHNS PIZZA INN in business started in 2018 april 05 with only ten members who were greatly committed.</p>
+            <p>Despite the challenges of unemployment we took 237 youths to be working for us by offering differnt services.</p>
+            <p>Through our long journey we have been able to get many customers who consider our work as the best.</p>
+            <div class="row rest">
+                <div class="col-md-4"><img src="/app/static/Images/images (1).jpeg" alt="" width="220" height="220" id="pic1"></div>
+                <div class="col-md-4"><img src="/app/static/Images/images.jpeg" alt="" width="220" height="220" id="pic2"></div>
+                <div class="col-md-4"><img src="/app/static/Images/download.jpeg" alt="" width="220" height="220" id="pic3"></div>
+
+            </div>
+        </div>
+
+        <div class="award">
+            <h2>Awards</h2>
+            <p>We have been able to get some awards through our quality work which we offer to the customers.</p>
+            <p>It is through our staff and support from the customers that has made us to reach at this high level.</p>
+            <div class="row">
+                <div class="col-md-3 eve1">
+                    <img src="/app/static/Images/awards.jpeg" alt="award1" width="190" id="img1">
+                    <div class="para">
+                        <p>Our first award since the start of the company.</p>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3 eve2">
+                    <img src="/app/static/Images/award.jpeg" alt="image2" width="190" id="img2">
+                    <div class="para1">
+                        <p id>We were winners of the Best International Fast Food Brand awards.</p>
+                    </div>
+                </div>
+        <div class="branch">
+            <h2>Branches</h2>
+            <p>We have our branches mainly in Nairobi such as in Karen 50metres from Bomas.</p>
+            <p>Some are also in Mombasa such as in Mtwapa along KImilili area.</p>
+            {% for order%}
+            <div class="row">
+                <div class="col-md-4"><img src="/app/static/Images/nairobi.jpeg" alt="nairobi" width="270" height="270" id="img1"></div>
+
+                <div class="col-md-4"><img src="/app/static/Images/pizaa.jpeg" alt="mbs" width="270" height="270" id="img2"></div>
+
+                <div class="col-md-4"><img src="/app/static/Images/mombasa.jpeg" alt="kisumu" width="270" height="270" id="img3"></div>
+            </div>
+
+        </div>
+
+        <div class="line"></div>
+        {% if current_user order.is_authenticated%}
+        <a id="start" class="btn btn-danger text-center" href="{{url_for('main.home')}}"><span class="view">View your order.</span></a> {% else %}
+        <a id="start" class="btn btn-danger text-center" href="{{url_for('auth.login')}}"><span class="view">Sign In.</span> </a> {% endif %}
+    </div>
+
+
+        <footer>
+            <p>For any issues or order,contact us through: call +254 738562058</p>
+            <p>Email US @:PAPAJOHNSPIZZAINN4@gmail.com</p>
+
+            <a href="https://www.facebook.com"><img src="/app/static/Images/facebook.png" alt="fb" id="img8"></a>
+            <a href="https://twitter.com/home"><img src="/app/static/Images/twitter.jpeg" alt="twit" id="img9"></a>
+            <a href="https://www.youtube.com/watch?v=f9Slq2ck7xQ"><img src="/app/static/Images/Youtube.png" alt="u-tube" id="img10"></a>
+            <p>BENVENUTO DI NUOVO.KARIBU TENA</p>
+
+            <p>Site created by YUMMY Investors Co.
+                Copyright(c)2020.All rights reserved.
+                P.O BOX: 999666,Nairobi,Kenya.
+            </p>
+
+
+</footer>
+</div>
+{% endfor %}
+</div>
+{% endfor %}
+</div>
+
+<style>
+body {
+background-color: blue;
+padding-top: 100px;
+}
+
+h2 {
+color: black;
+font-size: 50px;
+font-family: 'Kenia','cursive';
+}
+
+.container {
+font-size: 20px;
+}
+
+.box {
+box-shadow: 0px 10px 10px #865C33;
+}
+</style>
+
+{% endblock %}

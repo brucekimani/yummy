@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %} {% import 'macros.html' as macro %}
+{% block content %}
+<!-- styles block -->
+{% block styles %} {{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'styles.css') }}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+<link href="https://fonts.google.com/specimen/Kenia/" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pizza-inn</title>
+
+</head>
+
+<body class="container">
+    <div class="overlay">
+        <div class="clap">
+            <nav class="greatnav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li> <a href="menu.html"> Our Menu</a></li>
+
+                    <li> <a href="contact.html">Contact Us</a></li>
+
+                </ul>
+            </nav>
+            <div class="logo">
+                    <img src="/app/static/Images/download (2).jpeg" alt="logo" width="210" height="210" id="log1">
+
+                    <h1 class="welcome animated slideInLeft" style="animation-delay:0.0s">WELCOME TO PAPA JOHNS PIZZA INN</h1>
+                    <p class="para animated slideInLeft" style="animation-delay:2s">"Offriamo la migloire pizza citta."</p>
+
+            </div>
+        </div>
+        {% if pizza.user.profile_pic_path %}
+        <img src="{{url_for('static',filename = user.profile_pic_path)}}" alt="" class=""> {% else %}
+        <img src="{{url_for('static',filename = '/static/Users.jpg')}}" alt="" class=""> {% endif %}
+        <a href="/user/{{user.username}}&{{user.id}}">{{user.username|capitalize}}</a>
+    </h4
+        <div class="menu">
+            <h2>Menu</h2>
+
+            <p>What we offer from our restaurant is very yummy yummy,you will have a chance to taste various types from different countries.</p>
+
+
+            <div class="row pass">
+                <div class="col-md-4">
+                    <img src="/app/static/Images/bacon and fresh mozilla.jpeg" alt="" width="250" height="250" id="piz1">
+                    <p id="par1">Large size pizza with bacon and fresh mozilla toppings.</p>
+                </div>
+
+                <div class="col-md-4">
+                    <img src="/app/static/Images/images (1).jpeg" alt="" width="250" height="250" id="piz2">
+                    <p id="par2">Large pizza with sweet tomato toppings spiced. </p>
+                </div>
+
+                <div class="col-md-4">
+                    <img src="/app/static/Images/italian sausage  pizza.jpeg" alt="" width="250" height="250" id="piz3">
+                    <p id="par3">Large pizza with italian sausage toppings with spicy cheese.</p>
+                </div>
+
+            </div>
+            <div class="row fail">
+                <div class="col-md-4">
+                    <img src="/app/static/Images/download (1).jpeg" alt="" width="250" height="250" id="piz4">
+                    <p id="par4">Spicy cheese with tomato toppings large pizza.</p>
+                </div>
+
+                <div class="col-md-4">
+                    <img src="/app/static/Images/roasted mushroom.jpeg" alt="" width="200" height="200" id="piz5">
+                    <p id="par5">Large pizza with  roasted mushroom toppings.</p>
+                </div>
+
+                <div class="col-md-4">
+                    <img src="/app/static/Images/asparagus mushroom.jpeg" alt="" width="200" height="200" id="piz6">
+                    <p id="par6">Large pizza with asparagus mushroom and tomato toppings.</p>
+                </div>
+
+            </div>
+
+            <div class="order">
+                <h2>Make Your Order Now!!!</h2>
+
+                <form id="charge">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="">Pizza Size's</label>
+                            <br>
+                            <select name="" id="piz">
+                        
+                        <option value="Size">SELECT PIZZA</option>
+                        <option value="Small">Small Ksh.500</option>
+                        <option value="Medium">Medium Ksh. 1000</option>
+                        <option value="Large">Large Ksh. 1500</option>
+
+                    </select>
+                        </div>
+                        <br><br>
+
+                        <div class="col-md-4">
+                            <label for="">Toppings</label>
+                            <br>
+                            <select name="" id="topveg">
+
+                            <option value="">VEG</option>
+                            <option value="Mushrooms">Mushrooms ksh. 250</option>
+                            <option value="Onions">Onions ksh. 150</option>
+                            <option value="Capsicum">Capsicum ksh.250</option>
+                            
+                            </select>
+
+                        <br><br>
+                        <input type="submit" name="submit button"class="btn" value="Delivery" id="order">
+                        <div class="output">
+                            <p id="message"></p>
+                            </form>
+                        </div>
+                    </div>
+     
+                        <footer>
+                            <p>For any issues or order,contact us through: call +254 738562058</p>
+                            <p>Email US @:PAPAJOHNSPIZZAINN4@gmail.com</p>
+                
+                            <a href="https://www.facebook.com"><img src="/app/static/Images/facebook.png" alt="fb" id="img8"></a>
+                            <a href="https://twitter.com/home"><img src="/app/static/Images/twitter.jpeg" alt="twit" id="img9"></a>
+                            <a href="https://www.youtube.com/watch?v=f9Slq2ck7xQ"><img src="/app/static/Images/Youtube.png" alt="u-tube" id="img10"></a>
+                            <p>BENVENUTO DI NUOVO.KARIBU TENA</p>
+                
+                            <p>Site created by YUMMY Investors Co.
+                                Copyright(c)2020.All rights reserved.
+                                P.O BOX: 999666,Nairobi,Kenya.
+                            </p>
+                
+                </footer>
+                
+                </div>
+
+</div>
+{% endfor %}
+</div>
+{% endfor %}
+</div>
+
+<style>
+body {
+background-color: blue;
+padding-top: 100px;
+}
+
+h2 {
+color: black;
+font-size: 50px;
+font-family: 'Kenia','cursive';
+}
+
+.container {
+font-size: 20px;
+}
+
+.box {
+box-shadow: 0px 10px 10px #865C33;
+}
+</style>
+
+{% endblock %}

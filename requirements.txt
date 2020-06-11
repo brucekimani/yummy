@@ -6,7 +6,7 @@ click==7.1.2
 colorama==0.3.7
 configparser==4.0.2
 contextlib2==0.6.0.post1
-cryptography==2.1.4
+cryptography==2.3
 distlib==0.3.0
 dominate==2.5.1
 duplicity==0.7.17
